@@ -44,13 +44,12 @@ class PollenCardv2 extends LitElement {
                 return state_text[val]}
         }
 
-        var city = replaceAAO(this.config.city);
         const allergens = this.config.allergens;
         const state_text = ["Ingen pollen", "Låga halter","Låga-måttliga halter","Måttliga halter","Måttliga-höga halter","Höga halter","Mycket höga halter"];
 
         // Set header
         if (this.config.title == null || this.config.title == true) {
-            this.header = `Pollenprognos ${this.config.city.charAt(0).toUpperCase() + this.config.city.slice(1)}`;
+            this.header = `Pollen`;
         } else if (this.config.title.length > 0){
             this.header = this.config.title;
         }
@@ -262,9 +261,6 @@ class PollenCardv2 extends LitElement {
     setConfig(config) {
         if (!config.allergens) {
             throw new Error('You need to specify a list of allergens');
-        }
-        if (!config.city) {
-            throw new Error('You need to define a city');
         }
         this.config = config;
 
