@@ -1,7 +1,7 @@
 {
-  "name": "pollenprognos-card",
+  "name": "google-pollen-card",
   "content_in_root": true,
-  "filename": "pollenprognos-card.js",
-  "country": ["SE"],
+  "filename": "google-pollen-card.js",
+  "country": ["NO"],
   "render_readme": true
 }
