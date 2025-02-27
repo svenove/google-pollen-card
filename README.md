@@ -1,41 +1,39 @@
-# pollenprognos-card
+# google-pollen-card
 
-A Lovelace card to display the sensor data from the integration [Home Assistant Pollenprognos integration](https://github.com/JohNan/homeassistant-pollenprognos).
+A Lovelace card to display the sensor data from the integration [Google pollen](https://github.com/svenove/home-assistant-google-pollen).
 
 ![Screenshot 2022-08-05 at 22 37 45](https://user-images.githubusercontent.com/2181965/183159066-2cef1a6e-e59b-4bb3-832b-7bff781b471c.png)
 
 ## Requirement
 
-- [Home Assistant Pollenprognos integration](https://github.com/JohNan/homeassistant-pollenprognos)
+- [Google pollen](https://github.com/svenove/home-assistant-google-pollen)
 
 ### Install with HACS
 
-Add https://github.com/krissen/pollenprognos-card as a custom integration.
+Add https://github.com/svenove/google-pollen-card as a custom integration.
 See more info: https://hacs.xyz/docs/faq/custom_repositories
 
 [![hacs_badge](https://img.shields.io/badge/HACS-Custom-41BDF5.svg?style=for-the-badge)](https://github.com/hacs/integration)  
-[![HACS Action](https://github.com/krissen/pollenprognos-card/actions/workflows/hacs_action.yml/badge.svg)](https://github.com/krissen/pollenprognos-card/actions/workflows/hacs_action.yml)
 
 ## Credits
 
-Small improvements to [pollen-card](https://github.com/nidayand/lovelace-pollen-card) by @nidayand , who in turn rewrote @isabellaalstrom's [pollenprognos-card](https://github.com/isabellaalstrom/lovelace-pollenprognos-card).
+Based on [pollenprognos-card](https://github.com/krissen/pollenprognos-card) by @krissen, to make it work til the Google pollen integration.
+And @krissen made small improvements to [pollen-card](https://github.com/nidayand/lovelace-pollen-card) by @nidayand , who in turn rewrote @isabellaalstrom's [pollenprognos-card](https://github.com/isabellaalstrom/lovelace-pollenprognos-card).
 
 ## Note
 
-In minimal mode, you might notice some odd spelling. For instance, "Hassel" is shortened to "Hssel". This is to avoid line breaks which would break symmetry. *Let me know if this bothers you*. Create an issue on the repo or send me a PM. I can add an option to turn it off, if there's interest.
-
+In minimal mode, you might notice some odd spelling. For instance, "Hassel" is shortened to "Hssel". This is to avoid line breaks which would break symmetry. 
 Spelling in the normal (that is, not-minimal) card is as expected. ;-)
 
 ## Options
 
 | Name | Type | Default | Description
 | ---- | ---- | ------- | -----------
-| type | string | **Required** | `custom:pollen-card`
-| city | string | **Required** | City from which you have sensors
+| type | string | **Required** | `custom:google-pollen-card`
 | allergens | list | **Required** | List of allergens for which you have sensors
-| days_to_show | integer | **Optional** | How many days to show, 0 (only allergen) to 4. Default: 4.
+| days_to_show | integer | **Optional** | How many days to show, 0 (only allergen) to 2. Default: 2.
 | minimal | boolean | **Optional** | Use minimal, flexible layout
-| pollen_threshold | integer | **Optional** | Threshold of pollen value, for any of days 1-4, to show. Possible values: 0 to 6. Default: 1.
+| pollen_threshold | integer | **Optional** | Threshold of pollen value, for any of days 1-2, to show. Possible values: 0 to 5. Default: 1.
 | show_text | boolean | **Optional** | Set to `true` if you want to show the state text under the images
 | sort | string | **Optional** | Change how list of allergens is sorted. Possible values: `value_ascending`, `value_descending`, `name_ascending` (default), and `name_descending`. If sorted by value, today's value is used.
 | title | boolean | **Optional** | Custom title if string, boolean value if generated or not to show. Default is generated text
@@ -52,8 +50,7 @@ Spelling in the normal (that is, not-minimal) card is as expected. ;-)
 
 ```yaml
 cards:
-  - type: 'custom:pollenprognos-card'
-    city: Forshaga
+  - type: 'custom:google-pollen-card'
     show_text: false
     days_to_show: 2
     allergens:
@@ -76,8 +73,7 @@ cards:
 
 ```yaml
 cards:
-  - type: 'custom:pollenprognos-card'
-    city: Forshaga
+  - type: 'custom:google-pollen-card'
     show_text: true
     days_to_show: 4
     allergens:
@@ -100,8 +96,7 @@ cards:
 
 ```yaml
 cards:
-  - type: 'custom:pollenprognos-card'
-    city: Forshaga
+  - type: 'custom:google-pollen-card'
     show_text: false
     days_to_show: 0
     allergens:
@@ -130,8 +125,7 @@ cards:
 
 ```yaml
 cards:
-  - type: 'custom:pollenprognos-card'
-    city: Forshaga
+  - type: 'custom:google-pollen-card'
     show_text: false
     title: false
     minimal: true
@@ -157,8 +151,7 @@ cards:
 
 ```yaml
 cards:
-  - type: 'custom:pollenprognos-card'
-    city: Forshaga
+  - type: 'custom:google-pollen-card'
     show_text: true
     minimal: true
     days_to_show: 4        # HAS NO EFFECT IN MINIMAL LAYOUT
