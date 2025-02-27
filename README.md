@@ -1,3 +1,15 @@
+# WORK IN PROGRESS! DOES NOT WORK!
+
+
+
+
+
+
+
+
+
+
+
 # google-pollen-card
 
 A Lovelace card to display the sensor data from the integration [Google pollen](https://github.com/svenove/home-assistant-google-pollen).
